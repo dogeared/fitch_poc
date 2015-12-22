@@ -1,5 +1,6 @@
 package com.fitchsolutions.controllers;
 
+import com.fitchsolutions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +36,4 @@ public class RestrictedController extends ControllerBase {
     public void unauthorized(HttpServletResponse resp) throws Exception {
         resp.sendError(HttpStatus.UNAUTHORIZED.value(), "You are not an Admin.");
     }
-
-    private class UnauthorizedException extends Exception {}
 }
